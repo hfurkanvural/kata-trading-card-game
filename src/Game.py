@@ -17,6 +17,8 @@ class Game:
     def checkMana(self):
         if (any(self.activePlayer.mana >= x for x in self.activePlayer.hand)):
             return True
+        elif self.opponentPlayer.health <= 0:
+            return False
         else:
             print(self.activePlayer.name, "has not enough mana to play a card from hand!", self.activePlayer.handCards())
             return False
