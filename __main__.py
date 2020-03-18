@@ -1,5 +1,5 @@
-from Game import Game
-from Player import Player
+from src.Game import Game
+from src.Player import Player
 
 if __name__ == "__main__":
 
