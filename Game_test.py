@@ -2,8 +2,8 @@ import unittest
 import mock
 import logging
 import sys
-from Player import Player
-from Game import Game
+from src.Player import Player
+from src.Game import Game
 
 
 class Game_Test(unittest.TestCase):

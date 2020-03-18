@@ -1,7 +1,7 @@
 import unittest
 import logging
 import sys
-from Player import Player
+from src.Player import Player
 
 deck = [0, 0, 1, 1, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 5, 5, 6, 6, 7, 8]
 hand = []
@@ -95,6 +95,17 @@ class Player_Test(unittest.TestCase):
         ##Testing if played card reduced mana
         self.assertEqual(self.activePlayer.mana, 6)
 
+    def testHandCards(self):
+        log = logging.getLogger("testHandCards")
+        log.debug("Testing printing hand function...")
+        ## Testing hand with cards
+        log.debug("Testing hand with cards")
+        self.activePlayer.hand = [4,5]
+        self.assertEqual(self.activePlayer.handCards(), "\n#####  #####  \n#   #  #   #  \n# 4 #  # 5 #  \n#   #  #   #  \n#####  #####  ")
+        ## Testing hand without card
+        log.debug("Testing hand without card")
+        self.activePlayer.hand = []
+        self.assertEqual(self.activePlayer.handCards(),"\n")
 
 
 if __name__ == '__main__':
