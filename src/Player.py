@@ -31,12 +31,16 @@ class Player:
 
     ## Print cards
     def handCards(self):
-        cards = "\n"+ "#####  " * len(self.hand)
-        cards = cards + "\n" +  "#   #  " * len(self.hand) + "\n"
-        for card in self.hand:
-            cards = cards + ("#"+ str(card).center(3) + "#  ")
-        cards = cards + "\n" +  "#   #  " * len(self.hand) 
-        cards = cards + "\n" +  "#####  " * len(self.hand) 
+        ## Checking if has card in hand or not
+        if len(self.hand) > 0: 
+            cards = "\n"+ "#####  " * len(self.hand)
+            cards = cards + "\n" +  "#   #  " * len(self.hand) + "\n"
+            for card in self.hand:
+                cards = cards + ("#"+ str(card).center(3) + "#  ")
+            cards = cards + "\n" +  "#   #  " * len(self.hand) 
+            cards = cards + "\n" +  "#####  " * len(self.hand) 
+        else:
+            cards = "\n"
         return cards
 
     ## Playing a card in turn        
@@ -50,6 +54,9 @@ class Player:
         else:
             print(self.name, "could'nt gave damage to", target.name, "\n")
     
+    ## Mana refilling
+    def fillMana(self):
+        self.mana = self.manaSlots
 
 
         
