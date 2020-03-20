@@ -10,7 +10,7 @@ logging
 sys
 
 ## Usage
-Open command line on main directory and run "python trading-card-game". Game will start.
+Open command line on main directory and run "python kata-trading-card-game". Game will start.
 
 Or 
 
